@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "周运徽 <yhzhou7@iflytek.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "main": "dist/vue-district-picker",
   "repository": {
     "type": "git",
