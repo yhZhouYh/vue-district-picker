@@ -6,6 +6,7 @@ npm install --save vue-district-picker
 
 ## Use
 
+导入省市区数据，默认在dist/area.json
 ```
 import VueDistrictPicer from 'vue-district-picker';
 
