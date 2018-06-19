@@ -243,6 +243,7 @@ export default {
 }
 </script>
 <style lang="less">
+@import '../assets/1px.less';
 .city-selector-box {
   height: 273px;
   box-sizing: border-box;

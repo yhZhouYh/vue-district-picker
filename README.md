@@ -1,5 +1,7 @@
 # vue-district-picker
 
+!(/test.gif)
+
 ## install
 
 npm install --save vue-district-picker
@@ -7,8 +9,10 @@ npm install --save vue-district-picker
 ## Use
 
 导入省市区数据，默认在dist/area.json
+引入样式，默认在 dist/vue-district-picker.css
 ```
 import VueDistrictPicer from 'vue-district-picker';
+import 'vue-district-picker/dist/vue-district-picker.css'
 
 Vue.use(VueDistrictPicer)
 
@@ -42,6 +46,6 @@ Vue.use(VueDistrictPicer)
 
 ## 鸣谢
 
-AlloyTouch[https://github.com/AlloyTeam/AlloyTouch]
+[AlloyTouch](https://github.com/AlloyTeam/AlloyTouch)
 
 

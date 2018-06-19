@@ -1,5 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var merge = require('webpack-merge')
 
 module.exports = {
   // entry: './src/lib/index.js',
@@ -21,11 +23,17 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ],
-      },      {
+      }, {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
           loaders: {
+            less: ExtractTextPlugin.extract({
+              use: [
+                { loader: 'css-loader' },
+                { loader: 'less-loader' }],
+              fallback: 'vue-style-loader'
+            })
           }
           // other vue-loader options go here
         }
@@ -65,15 +73,16 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   module.exports.entry = './src/lib/index.js'
   module.exports.output = {
-  path: path.resolve(__dirname, './dist'),
-  publicPath: '/dist/',
-  filename: 'vue-district-picker.js',
-  library: 'VueDistrictPicker',
-  libraryTarget: 'umd',
-  umdNamedDefine: true
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/dist/',
+    filename: 'vue-district-picker.js',
+    library: 'VueDistrictPicker',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   }
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
+    new ExtractTextPlugin('vue-district-picker.css'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'

@@ -2,6 +2,8 @@
   <div id="app">
     <button @click="tt">选择</button>
     <vue-district-picker :show.sync="show" @confirm="confirm" :citydata="citydata"></vue-district-picker>
+    <div>{{ids}}</div>
+    <div>{{values}}</div>
   </div>
 </template>
 
@@ -20,12 +22,16 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       show: false,
-      citydata
+      citydata,
+      ids:null,
+      values: null
     }
   },
   methods: {
     confirm(ids, values){
       console.log(ids, values)
+      this.ids = [...ids]
+      this.values = [...values]
     },
     tt(){
       this.show = !this.show
