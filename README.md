@@ -40,4 +40,8 @@ Vue.use(VueDistrictPicer)
 }
 ```
 
+## 鸣谢
+
+AlloyTouch[https://github.com/AlloyTeam/AlloyTouch]
+
 
