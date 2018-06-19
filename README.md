@@ -1,6 +1,6 @@
 # vue-district-picker
 
-!(/test.gif)
+![](./test.gif)
 
 ## install
 
